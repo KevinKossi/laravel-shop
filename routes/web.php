@@ -18,14 +18,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('contact', [App\Http\Controllers\PagesController::class, 'contact'])->name('contact');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    // alle pages dat door een auth moet gaan, steek je hier in 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
+
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index' ]);
+
+});
 require __DIR__.'/auth.php';

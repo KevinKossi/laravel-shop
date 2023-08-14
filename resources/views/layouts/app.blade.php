@@ -13,6 +13,18 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- plugin css for this page -->
+        <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="images/favicon.png" />
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">

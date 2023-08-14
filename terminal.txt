@@ -1,0 +1,22 @@
+login 
+- in een terminal => npm run dev 
+
+hosting 
+ phph artisan serve  
+
+
+admin template: 
+https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template
+
+
+
+bekeken vids: 
+https://www.youtube.com/watch?v=uG6QlZ938Ow&ab_channel=FundaOfWebIT
+
+part4 checken voor redirects to dashboard p
+
+seed activeren
+-in terminal :    
+-- voor admin user 
+    php artisan db:seed --class=AdminUserSeeder
+

@@ -19,6 +19,18 @@ class AuthenticatedSessionController extends Controller
     {
         return view('auth.login');
     }
+    protected function authenticated ( ){
+
+        if (Auth::user()->role_as == '1'){
+            return redirect('admin/dashboard')->with('status', 'Bienvenue au dashboard admin');
+        } else {
+            // deze pagina mss nog veranderen naar iets beters zoals homepage zelf 
+            return redirect('/')->with('status', 'Bienvenue au main, page');
+ 
+        }
+
+    }
+
 
     /**
      * Handle an incoming authentication request.

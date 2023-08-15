@@ -49,6 +49,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
         Route::get('/category/{category}/delete', 'delete');
     });
+
+    Route::get('/meats', App\Http\Livewire\Admin\Meat\Index::class);
 });
 
 

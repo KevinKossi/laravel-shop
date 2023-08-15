@@ -31,20 +31,20 @@
         <span class="menu-title"> category</span>
       </a></li>
 
-      <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">
+      <li class="nav-item"> <a class="nav-link" href="/admin/category/create">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">add category</span>
       </a></li>
       
-      <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">
+      <li class="nav-item"> <a class="nav-link" href="/admin/category">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">view category</span>
       </a></li>
 
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" href="/admin/meats">
           <i class="mdi mdi-view-headline menu-icon"></i>
-          <span class="menu-title">Form elements</span>
+          <span class="menu-title">Meats</span>
         </a>
     </li>
       <li class="nav-item">

@@ -20,3 +20,8 @@ seed activeren
 -- voor admin user 
     php artisan db:seed --class=AdminUserSeeder
 
+
+used commands 
+
+- php artisan make:request CategoryFormRequest
+- php artisan make:livewire Admin/Category/Index

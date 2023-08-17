@@ -9,25 +9,21 @@ use App\Models\Category;
 use App\Models\Meat;
 use app\Http\Requests\ProductFormRequest;
 
+use App\Models\Product;
+use App\Models\ProductCategory;
+
 class ProductController extends Controller
 {
-    function index() {
+    function indexAdmin() {
         return view('admin.products.index');
     }
-    function store(ProductFormRequest $request) {
-        $validatedData = $request->validated();
-        $category = Category::findOrFail($validatedData['category_id']);
-        $category->products()->create($validatedData['']);
+    public function index()
+    {
+ 
+            return view("product.index", ["products" => Product::simplepaginate(10), "categories" => \App\Models\Meat::all()]) ;
+        
     }
-    function create() {
-        $categories = Category::all();
-        $meats = Meat::all();
-        return view('admin.products.create', compact('categories', 'meats'));
-    }
-    function edit() {
-        return view('admin.products.index');
-    }
-    function update() {
-        return view('admin.products.index');
-    }
+
+
 }
+

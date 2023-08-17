@@ -5,21 +5,6 @@ hosting
  phph artisan serve  
 
 
-admin template: 
-https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template
-
-
-
-bekeken vids: 
-https://www.youtube.com/watch?v=uG6QlZ938Ow&ab_channel=FundaOfWebIT
-
-
-form page
-https://startbootstrap.com/snippets/bootstrap-contact-form-example
-
-product navbar =
-https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior
-
 
 part4 checken voor redirects to dashboard p
 

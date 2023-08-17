@@ -14,11 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('contact', [App\Http\Controllers\PagesController::class, 'contact'])->name('contact');
+Route::get('/', [App\Http\Controllers\PagesController::class, 'home'])->name('home');
+
+Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'index']);
+Route::resource('/articles', App\Http\Controllers\ArticleController::class, ['only' => ['show', 'index']]);
+
+
+Route::get('/products', [App\Http\Controllers\PagesController::class, 'products'])->name('products');
+
+
+Route::get('/about', [App\Http\Controllers\PagesController::class, 'about'])->name('about');
+
+//contact routes
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'show']);
+Route::post('/contact/submit', [App\Http\Controllers\ContactController::class, 'contactToAdmin']);
+Route::get('/contactSent' , [App\Http\Controllers\ContactController::class, 'contactSent']);
+
+// product routes (user only)
+Route::resource('/products', App\Http\Controllers\Admin\ProductController::class, ['only' => ['index', 'show']]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -52,7 +66,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     // product routes
     Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
-        Route::get('/products', 'index');
+        Route::get('/products', 'indexAdmin');
         Route::post('/products', 'store');
 
         Route::get('/products/create', 'create');
@@ -60,9 +74,11 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
         Route::put('/products/{products}','update');
     
 
-
         Route::get('/products/{products}/delete', 'delete');
     });
+
+    // Article route (admin only )
+    Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'indexAdmin']);
 
     // FAQ en FAQ categories 
     Route::controller(App\Http\Controllers\Admin\FAQController::class)->group(function(){

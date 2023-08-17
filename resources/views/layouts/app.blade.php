@@ -1,48 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>{{ config('app.name', 'Grill N Chill') }}</title>
 
-        <!-- plugins:css -->
-        <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-        <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
-        <!-- endinject -->
-        <!-- plugin css for this page -->
-        <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-        <!-- End plugin css for this page -->
-        <!-- inject:css -->
-        <link rel="stylesheet" href="css/style.css">
-        <!-- endinject -->
-        <link rel="shortcut icon" href="images/favicon.png" />
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column">
+    @include("partials.header")
+
+    <main class="py-4">
+        @yield('content')
+    </main>
+
+    @include("partials.footer")
+    @yield('style')
+    @yield('script')
+</body>
+
 </html>

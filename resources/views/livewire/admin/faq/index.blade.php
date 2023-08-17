@@ -3,10 +3,10 @@
         <div>
             <h4> Categories </h4>
             <ul class="list-group ">
-                <li class="list-group-item"> <a href="{{ url('admin/faqcat') }}">
+                <li class="list-group-item"> <a href="#" data-category="all" >
                         All Categories </a> </li>
                 @foreach ($categories as $category)
-                    <li class="list-group-item"> <a href="{{ url('admin/faqcat') }}">
+                    <li class="list-group-item"> <a href="#" data-category="{{ $category->category_name }}"     >
                             {{ $category->category_name }} </a> </li>
                 @endforeach
             </ul>
@@ -41,3 +41,37 @@
         </div>
     </div>
 </div>
+@push('scripts')
+    <script>
+        // Add an event listener to the category links
+const categoryLinks = document.querySelectorAll('a[data-category]');
+categoryLinks.forEach(link => {
+  link.addEventListener('click', handleCategoryFilter);
+});
+
+// Function to handle the category filtering
+function handleCategoryFilter(event) {
+  event.preventDefault();
+
+  // Get the selected category from the clicked link
+  const selectedCategory = event.target.dataset.category;
+
+  // Fetch all question containers
+  const questionContainers = document.getElementsByClassName('accordion');
+
+  // Loop through the question containers
+  Array.from(questionContainers).forEach(container => {
+    // Check if the category matches or if 'All Categories' is selected
+    const categoryContainer = container.getAttribute('data-category');
+    if (categoryContainer === selectedCategory || selectedCategory === 'all') {
+      // Show the question container
+      container.style.display = 'block';
+    } else {
+      // Hide the question container
+      container.style.display = 'none';
+    }
+  });
+}
+
+    </script>
+@endpush

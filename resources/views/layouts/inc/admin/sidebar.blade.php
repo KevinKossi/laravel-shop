@@ -20,9 +20,16 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" href="/admin/faqs">
           <i class="mdi mdi-view-headline menu-icon"></i>
-          <span class="menu-title">Form elements</span>
+          <span class="menu-title">FAQs</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/faqcat">
+          <i class="mdi mdi-emoticon menu-icon"></i>
+          <span class="menu-title">FAQs categories</span>
         </a>
       </li>
 
@@ -39,6 +46,16 @@
       <li class="nav-item"> <a class="nav-link" href="/admin/category">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">view category</span>
+      </a></li>
+
+      <li class="nav-item"> <a class="nav-link" href="/admin/products/create">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">add product</span>
+      </a></li>
+
+      <li class="nav-item"> <a class="nav-link" href="/admin/products">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">view product</span>
       </a></li>
 
       <li class="nav-item">
@@ -59,12 +76,7 @@
           <span class="menu-title">Tables</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/icons/mdi.html">
-          <i class="mdi mdi-emoticon menu-icon"></i>
-          <span class="menu-title">Icons</span>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
           <i class="mdi mdi-account menu-icon"></i>

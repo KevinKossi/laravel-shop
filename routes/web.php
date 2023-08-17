@@ -50,9 +50,45 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
         Route::get('/category/{category}/delete', 'delete');
     });
 
+    // product routes
+    Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
+        Route::get('/products', 'index');
+        Route::post('/products', 'store');
+
+        Route::get('/products/create', 'create');
+        Route::get('/products/{products}/edit', 'edit');
+        Route::put('/products/{products}','update');
+    
+
+
+        Route::get('/products/{products}/delete', 'delete');
+    });
+
+    // FAQ en FAQ categories 
+    Route::controller(App\Http\Controllers\Admin\FAQController::class)->group(function(){
+        Route::get('/faqs', 'indexAdmin');
+
+    });
+
+    Route::controller(App\Http\Controllers\Admin\FAQCategoryController::class)->group(function(){
+        
+        Route::get('/faqcat', 'index');
+        Route::get('/faqcat/create', 'index');
+        Route::get('/faqcat/edit', 'index');
+        Route::get('/faqcat/destroy', 'index');
+        Route::post('/faqcat', 'create');
+        Route::put('/faqcat', 'edit');
+        Route::delete('/faqcat', 'destroy');
+
+    });
+
+
     Route::get('/meats', App\Http\Livewire\Admin\Meat\Index::class);
 });
 
+Route::controller(App\Http\Controllers\Admin\FAQController::class)->group(function(){
+    Route::get('/faqs', 'index');
 
+});
 
 require __DIR__.'/auth.php';

@@ -16,6 +16,7 @@ class SendFeedbackToAdmins extends Mailable
      *
      * @return void
      */
+    public $name, $email, $message;
     public function __construct($name, $email, $message)
     {
        $this->name = $name;

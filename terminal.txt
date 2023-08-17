@@ -13,6 +13,14 @@ https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template
 bekeken vids: 
 https://www.youtube.com/watch?v=uG6QlZ938Ow&ab_channel=FundaOfWebIT
 
+
+form page
+https://startbootstrap.com/snippets/bootstrap-contact-form-example
+
+product navbar =
+https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior
+
+
 part4 checken voor redirects to dashboard p
 
 seed activeren
@@ -25,3 +33,5 @@ used commands
 
 - php artisan make:request CategoryFormRequest
 - php artisan make:livewire Admin/Category/Index
+
+revisit part 4 and 9 

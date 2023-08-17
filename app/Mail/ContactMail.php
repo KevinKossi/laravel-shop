@@ -16,7 +16,7 @@ class FeedbackSend extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public string $name, public string $email, public string $message)
     {
         //
     }
@@ -28,6 +28,8 @@ class FeedbackSend extends Mailable
      */
     public function build()
     {
-        return $this->from("rohawes643@v1zw.com")->markdown('emails.contact');
+        return $this->subject('Contact from shop.test')
+                    ->replyTo($this->email)
+                    ->markdown('emails.contact');
     }
 }

@@ -66,7 +66,7 @@ class Index extends Component
    public function updateMeat() {
          
         $validatedData = $this->validate();
-        Meat::findOrFail($this->$meats_id)->update([
+        Meat::findOrFail($meats_id)->update([
             "name" =>$this->name ,
             "weight"=>$this->weight,
             "description"=>$this->description,
